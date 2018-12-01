@@ -170,7 +170,8 @@ public:
     
     virtual void setTesting(bool testing) override
     {
-        _adController.testing = testing;
+#warning FIXME
+        //_adController.testing = testing;
     }
     
     virtual void loadAd() override
@@ -190,7 +191,8 @@ public:
     
     virtual ~IOSMPInterstitialAdController()
     {
-        [_adController removeFromParentViewController];
+        #warning FIXME
+        //[_adController removeFromParentViewController];
         [::MPInterstitialAdController removeSharedInterstitialAdController:_adController];
     }
     
@@ -220,7 +222,8 @@ public:
     virtual void initializeRewardedVideoWithGlobalMediationSettings(void */*(NSArray *)*/globalMediationSettings, MPRewardedVideoDelegate &delegate) override
     {
         _delegate = [[IOSMPRewardedVideoDelegate alloc] initWithDelegate:&delegate];
-        [[MoPub sharedInstance] initializeRewardedVideoWithGlobalMediationSettings:nil delegate:_delegate];
+        #warning FIXME
+        //[[MoPub sharedInstance] initializeRewardedVideoWithGlobalMediationSettings:nil delegate:_delegate];
     }
 
     virtual void loadRewardedVideoAdWithAdUnitID(const std::string &adUnitID, void*/*(NSArray *)*/mediationSettings) override
@@ -230,12 +233,14 @@ public:
 
     virtual void loadRewardedVideoAdWithAdUnitID(const std::string &adUnitID, const std::string &keywords, void*/*(CLLocation *)*/ location, void*/*(NSArray *)*/mediationSettings) override
     {
-        [::MPRewardedVideo loadRewardedVideoAdWithAdUnitID:[NSString stringWithUTF8String:adUnitID.c_str()] keywords:[NSString stringWithUTF8String:keywords.c_str()] location:nil mediationSettings:nil];
+        #warning FIXME
+        //[::MPRewardedVideo loadRewardedVideoAdWithAdUnitID:[NSString stringWithUTF8String:adUnitID.c_str()] keywords:[NSString stringWithUTF8String:keywords.c_str()] location:nil mediationSettings:nil];
     }
 
     virtual void loadRewardedVideoAdWithAdUnitID(const std::string &adUnitID, const std::string &keywords, void*/*(CLLocation *)*/ location, const std::string &customerId, void*/*(NSArray *)*/mediationSettings) override
     {
-        [::MPRewardedVideo loadRewardedVideoAdWithAdUnitID:[NSString stringWithUTF8String:adUnitID.c_str()] keywords:[NSString stringWithUTF8String:keywords.c_str()] location:nil customerId:[NSString stringWithUTF8String:customerId.c_str()] mediationSettings:nil];
+        #warning FIXME
+        //[::MPRewardedVideo loadRewardedVideoAdWithAdUnitID:[NSString stringWithUTF8String:adUnitID.c_str()] keywords:[NSString stringWithUTF8String:keywords.c_str()] location:nil customerId:[NSString stringWithUTF8String:customerId.c_str()] mediationSettings:nil];
     }
 
     virtual bool hasAdAvailableForAdUnitID(const std::string &adUnitID) override
